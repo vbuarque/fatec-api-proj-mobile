@@ -1,22 +1,32 @@
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+
+import { ScrollView } from "react-native";
+import CardStation from "../../components/CardStation";
+import { Container } from "./styles";
 
 export default function Home() {
     return(
-        <View style={styles.container}>
-            <Text style={styles.text}>Pagina Home</Text>
-        </View>
+        <ScrollView>
+        <Container>
+            <CardStation />
+
+            <CardStation />
+
+            <CardStation />
+
+            <CardStation />
+
+            <CardStation />
+
+            <CardStation />
+
+            <CardStation />
+
+            <CardStation />
+
+            <CardStation />
+
+            <CardStation />
+        </Container>
+        </ScrollView>
     );
 }
-
-const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    text:{
-        fontSize: 25,
-        fontWeight:'bold'
-    }
-});

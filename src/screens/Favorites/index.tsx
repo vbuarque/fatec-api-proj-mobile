@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from "react-native";
 export default function Favorites() {
     return(
         <View style={styles.container}>
-            <Text style={styles.text}>Pagina Home</Text>
+            <Text style={styles.text}>Favorito</Text>
         </View>
     );
 }
