@@ -54,3 +54,6 @@ export const StationLocal = styled.Text`
     font-size: 16px;
     color: #f8f8ff;
 `;
+
+export const ButtonFavorite = styled.TouchableOpacity``;
+

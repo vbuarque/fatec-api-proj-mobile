@@ -1,3 +1,5 @@
+import {useEffect, useState} from 'react';
+
 import {
   Card,
   ImageStation,
@@ -7,22 +9,35 @@ import {
   StationName,
   StationLocalTitle,
   StationLocal,
+  ButtonFavorite,
 } from "./styles";
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faStar } from '@fortawesome/free-regular-svg-icons';
-
-import { TouchableOpacity } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { Star } from 'phosphor-react-native';
 
 const fatecImg = require("../../assets/images/fatec-sjc.jpg");
 
-export default function CardStation() {
-    const navigate = useNavigation();
+import { useNavigation } from "@react-navigation/native";
 
-  return (
+export default function CardStation() {
+  const navigation = useNavigation();
+
+  function openScreen() {
+    navigation.navigate('Details');
+  }
+  
+  const [isFavorite, setIsFavorite] = useState(true);
+
+  useEffect(() => {
+    function handleFavorite() {
+      setIsFavorite(!isFavorite);
+    }
+  }, []);
+
+  return ( 
     <>
-      <Card>
+      <Card onPress={openScreen}>
         <ImageStation source={fatecImg}/>
         <StationInformationContainer>
           <StationContent>
@@ -34,10 +49,14 @@ export default function CardStation() {
             <StationLocal>PQ. Tecnilógico</StationLocal>
           </StationContent>
         </StationInformationContainer>
-        <TouchableOpacity>
-            <FontAwesomeIcon icon={faStar} size={20} color="#fff" />
-        </TouchableOpacity>
-        
+        <ButtonFavorite onPress={() => setIsFavorite(!isFavorite)}>
+          {
+          isFavorite ?
+          <FontAwesomeIcon icon={faStar} size={20} color="#fff" /> 
+          :
+          <Star color="#fff" weight="fill" size={20}/>
+          }
+        </ButtonFavorite>
       </Card>
     </>
   );
