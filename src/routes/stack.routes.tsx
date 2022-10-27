@@ -1,42 +1,19 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createStackNavigator } from '@react-navigation/stack';
 
-import Home from '../screens/Home';
-import Favorites from '../screens/Favorites';
 import Welcome from '../screens/Welcome';
+import Details from '../screens/Details';
 
-const { Screen, Navigator, Group } = createNativeStackNavigator();
+import TabRoutes from './tab.routes';
+
+const Stack = createStackNavigator();
 
 export default function StackRoutes() {
-    return (
-        <Navigator>
-            <Screen
-                name="Welcome"
-                component={Welcome}
-                options={{
-                    headerShown: false
-                }}
-            />
-
-            <Group
-                screenOptions={{
-                    headerTitleAlign: 'center',
-                }}>
-                <Screen
-                    name="Home"
-                    component={Home}
-                    options={{
-                        title: 'Lista de estações',
-                    }}
-                />
-
-                <Screen
-                    name="Favorites"
-                    component={Favorites}
-                    options={{
-                        title: 'Favoritos',
-                    }}
-                />
-            </Group>
-        </Navigator>
-    )
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Welcome" component={Welcome} options={{ headerShown: false, }}></Stack.Screen>
+      <Stack.Screen name="Home" component={TabRoutes} options={{ headerShown: false}}></Stack.Screen>
+      <Stack.Screen name="Favorites" component={TabRoutes} options={{ headerShown: false }}></Stack.Screen>
+      <Stack.Screen name="Details" component={Details} ></Stack.Screen>
+    </Stack.Navigator>
+  )
 }

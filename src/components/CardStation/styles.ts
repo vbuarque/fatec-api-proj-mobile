@@ -6,7 +6,7 @@ export const Card = styled.TouchableOpacity`
 
     padding: 16px;
 
-    border-radius: 300px;
+    border-radius: 8px;
     background: #00C667;
 
     flex-direction: row;
@@ -54,3 +54,6 @@ export const StationLocal = styled.Text`
     font-size: 16px;
     color: #f8f8ff;
 `;
+
+export const ButtonFavorite = styled.TouchableOpacity``;
+

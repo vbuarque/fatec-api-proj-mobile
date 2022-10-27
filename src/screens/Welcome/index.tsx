@@ -1,4 +1,5 @@
 import React from "react";
+import { SafeAreaView } from 'react-native-safe-area-context';
 import {
     Container,
     TitlePage,
@@ -14,14 +15,16 @@ export default function Welcome() {
     }
  
     return (
-        <Container>
-            <TitlePage>
-                Obtenha os dados na sua mão
-            </TitlePage>
-            <ButtonAccess
-            title='Acessar'
-            onPress={openScreen}
-            />
-        </Container>
+        <SafeAreaView>
+            <Container>
+                <TitlePage>
+                    Obtenha os dados na sua mão
+                </TitlePage>
+                <ButtonAccess
+                title='Acessar'
+                onPress={openScreen}
+                />
+            </Container>
+        </SafeAreaView>
     );
 }
