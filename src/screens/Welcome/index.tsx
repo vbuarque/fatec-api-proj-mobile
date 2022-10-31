@@ -1,11 +1,15 @@
-import React from "react";
-import { SafeAreaView } from 'react-native-safe-area-context';
 import {
     Container,
     TitlePage,
-    ButtonAccess
+    ButtonAccess,
+    ButtonAccessText,
+    ImageBG,
+    Content
 } from './styles';
-import { useNavigation } from "@react-navigation/native";
+
+const bgImage = require("../../assets/images/bginicio.png");
+
+import { useNavigation } from '@react-navigation/native';
 
 export default function Welcome() {
     const navigation = useNavigation();
@@ -15,16 +19,16 @@ export default function Welcome() {
     }
  
     return (
-        <SafeAreaView>
-            <Container>
-                <TitlePage>
-                    Obtenha os dados na sua mão
-                </TitlePage>
-                <ButtonAccess
-                title='Acessar'
-                onPress={openScreen}
-                />
-            </Container>
-        </SafeAreaView>
+        <Container>
+            <ImageBG source={bgImage}>
+                <Content>
+                    <TitlePage>Obtenha os dados na sua mão</TitlePage>
+                    <ButtonAccess onPress={openScreen}>
+                        <ButtonAccessText>Acessar</ButtonAccessText>
+                    </ButtonAccess>
+                </Content>
+            </ImageBG>
+        </Container>
     );
 }
+  

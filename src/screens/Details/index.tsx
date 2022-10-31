@@ -1,10 +1,57 @@
-import {Texts} from './styles';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { ScrollView } from 'react-native';
+import { useRoute } from "@react-navigation/native";
+
+import { 
+    StationContentTop,
+    Image,
+    StationInformationContainer,
+    StationContent,
+    StationNameTitle,
+    StationName,
+    StationLocalTitle,
+    StationLocal,
+    Divider,
+    StationContentData,
+    ContentDataTitle,
+    ContentDataTitleText
+} from './styles';
+import StationChart from '../../components/StationChart';
+
+type StationProps = {
+    name: string;
+    reference: string;
+    link: string;
+};
 
 export default function Details() {
+    const routes = useRoute();
+    const {name, reference, link} = routes.params as StationProps;
+
     return (
-        <SafeAreaView>
-            <Texts>Details</Texts>
-        </SafeAreaView>   
+        <>
+            <ScrollView>
+                <StationContentTop>
+                    <Image source={link}/>
+                    <StationInformationContainer>
+                        <StationContent>
+                            <StationNameTitle>Nome da estação</StationNameTitle>
+                            <StationName>{name}</StationName>
+                        </StationContent>
+                        <StationContent>
+                            <StationLocalTitle>Localização</StationLocalTitle>
+                            <StationLocal>{reference}</StationLocal>
+                        </StationContent>
+                    </StationInformationContainer>
+                    <Divider />
+                </StationContentTop>
+
+                <StationContentData>
+                    <ContentDataTitle>
+                        <ContentDataTitleText>Dados coletados da estação</ContentDataTitleText>
+                    </ContentDataTitle>
+                    <StationChart />
+                </StationContentData>
+            </ScrollView>
+        </>
     );
 }   

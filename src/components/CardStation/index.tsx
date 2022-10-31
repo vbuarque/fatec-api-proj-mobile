@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import { useState } from 'react';
 
 import {
   Card,
@@ -12,50 +12,38 @@ import {
   ButtonFavorite,
 } from "./styles";
 
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faStar } from '@fortawesome/free-regular-svg-icons';
 import { Star } from 'phosphor-react-native';
 
-const fatecImg = require("../../assets/images/fatec-sjc.jpg");
+type StationProps = {
+  name: string;
+  reference: string;
+  link: string;
+  onPress: () => void;
+};
 
-import { useNavigation } from "@react-navigation/native";
+export default function CardStation( {name, reference, link, onPress}: StationProps ) {
+  const [isFavoriteIcon, setIsFavoriteIcon] = useState(true);
 
-export default function CardStation() {
-  const navigation = useNavigation();
-
-  function openScreen() {
-    navigation.navigate('Details');
+  const handleChangeIconFav = () => {
+    setIsFavoriteIcon(!isFavoriteIcon);
   }
-  
-  const [isFavorite, setIsFavorite] = useState(true);
-
-  useEffect(() => {
-    function handleFavorite() {
-      setIsFavorite(!isFavorite);
-    }
-  }, []);
 
   return ( 
     <>
-      <Card onPress={openScreen}>
-        <ImageStation source={fatecImg}/>
+      <Card onPress={onPress}>
+        <ImageStation source={link}/>
         <StationInformationContainer>
           <StationContent>
             <StationNameTitle>Nome da estação</StationNameTitle>
-            <StationName>Estação Fatec</StationName>
+            <StationName>{name}</StationName>
           </StationContent>
           <StationContent>
             <StationLocalTitle>Localização</StationLocalTitle>
-            <StationLocal>PQ. Tecnilógico</StationLocal>
+            <StationLocal>{reference}</StationLocal>
           </StationContent>
         </StationInformationContainer>
-        <ButtonFavorite onPress={() => setIsFavorite(!isFavorite)}>
-          {
-          isFavorite ?
-          <FontAwesomeIcon icon={faStar} size={20} color="#fff" /> 
-          :
-          <Star color="#fff" weight="fill" size={20}/>
-          }
+        <ButtonFavorite onPress={handleChangeIconFav}>
+          <Star size={24} color="#f8f8ff" weight={isFavoriteIcon ? "regular" : "fill"} />
         </ButtonFavorite>
       </Card>
     </>
