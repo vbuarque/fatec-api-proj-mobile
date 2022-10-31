@@ -14,6 +14,8 @@ import {
 
 import { Star } from 'phosphor-react-native';
 
+const stationImg = require("../../assets/images/fatec-sjc.jpg")
+
 type StationProps = {
   name: string;
   reference: string;
@@ -28,10 +30,12 @@ export default function CardStation( {name, reference, link, onPress}: StationPr
     setIsFavoriteIcon(!isFavoriteIcon);
   }
 
+  
+
   return ( 
     <>
       <Card onPress={onPress}>
-        <ImageStation source={link}/>
+        <ImageStation source={{uri: link}}/>
         <StationInformationContainer>
           <StationContent>
             <StationNameTitle>Nome da estação</StationNameTitle>
