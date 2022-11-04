@@ -39,10 +39,11 @@ export default function Home() {
                             link={station.link}
                             onPress={
                                 () => navigation.navigate('Details', 
-                                {
+                                {  
+                                    id: station.id,
                                     name: station.name, 
                                     reference: station.reference, 
-                                    link: station.link
+                                    link: station.link,
                                 })}
                         />
                     ))}

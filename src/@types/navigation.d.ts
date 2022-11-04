@@ -4,6 +4,7 @@ export declare global {
             Welcome: undefined;
             Home: undefined;
             Details: { 
+                id: string;
                 name: string;
                 reference: string;
                 link: string;

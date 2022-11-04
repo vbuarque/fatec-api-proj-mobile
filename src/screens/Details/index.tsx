@@ -28,11 +28,13 @@ export default function Details() {
     const routes = useRoute();
     const {name, reference, link} = routes.params as StationProps;
 
+
+
     return (
         <>
             <ScrollView>
                 <StationContentTop>
-                    <Image source={link}/>
+                    <Image source={{uri: link}}/>
                     <StationInformationContainer>
                         <StationContent>
                             <StationNameTitle>Nome da estação</StationNameTitle>
