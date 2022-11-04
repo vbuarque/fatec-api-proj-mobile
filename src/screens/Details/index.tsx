@@ -15,6 +15,7 @@ import {
     ContentDataTitle,
     ContentDataTitleText
 } from './styles';
+
 import StationChart from '../../components/StationChart';
 
 type StationProps = {

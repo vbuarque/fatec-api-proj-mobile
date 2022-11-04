@@ -25,7 +25,7 @@ export default function Home() {
             setStations(response.data);
         }
         loadStations();
-    }, []);
+    }, [stations]);
 
     return (
         <>

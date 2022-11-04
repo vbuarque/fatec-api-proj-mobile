@@ -22,12 +22,17 @@ export const StationInformationContainer = styled.View`
     flex-direction: row;
 `;
 
-export const StationContent = styled.View``;
+export const StationContent = styled.View`
+    flex: 1;
+`;
 
 export const StationNameTitle = styled.Text`
     font-weight: 700;
     font-size: 16px;
     color: #29292e;
+
+    width: 100%;
+    text-overflow: ellipsis;
 `;
 
 export const StationName = styled.Text`
@@ -58,6 +63,8 @@ export const Divider = styled.View`
 `;
 
 export const StationContentData = styled.View`
+    width: 100%;
+    align-items: center;
     flex: 1;
     padding: 0 20px;
 `;
