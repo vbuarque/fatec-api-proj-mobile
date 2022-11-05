@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 
 export const Card = styled.TouchableOpacity`
   width: 100%;
-  height: 132px;
+  height: 130px;
 
   padding: 16px;
 
@@ -31,22 +31,18 @@ export const StationInformationContainer = styled.View`
 
 export const StationContent = styled.View`
   
- 
 `;
 
 export const StationNameTitle = styled.Text`
   font-weight: 700;
   font-size: 16px;
   color: #f8f8ff;
-
- 
 `;
 
 export const StationName = styled.Text`
   font-weight: 400;
   font-size: 16px;
   color: #f8f8ff;
-  
 `;
 
 export const StationLocalTitle = styled.Text`

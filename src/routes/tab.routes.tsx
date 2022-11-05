@@ -5,7 +5,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { House, Star } from 'phosphor-react-native'; 
 
 import Home from '../screens/Home';
-import Favorites from '../screens/Favorites';
 
 import { RootTabParamList } from './types';
 
@@ -26,7 +25,7 @@ export default function TabRoutes() {
                 headerStyle: {
                     backgroundColor: '#f8f8ff', 
                     borderBottomWidth: 1,
-                    height: 60,
+                    height: 80,
                 },
 
                 tabBarStyle: {
@@ -37,22 +36,11 @@ export default function TabRoutes() {
                 }
             }}
             >
-            
                 <Screen name="HomeTab" component={Home} options={{ 
-                    title: 'Página Inicial',
+                    title: 'Estações cadastradas',
                     tabBarIcon: ({ size, color }) => {
                         return (
                             <House size={size} color={color} weight="fill"/>
-                        );
-                    },
-                
-                }}
-                />
-                <Screen name="FavoritesTab" component={Favorites} options={{ 
-                    title: 'Favoritos', 
-                    tabBarIcon: ({ size, color }) => {
-                        return (
-                            <Star size={size} color={color} weight="fill"/>
                         );
                     },
                 }}

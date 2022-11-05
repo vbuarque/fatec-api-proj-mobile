@@ -1,30 +1,30 @@
 export const data = [
     {
-        x: 'Segunda',
+        x: 1,
         y: 20,
     },
     {
-        x: 'Terça',
+        x: 2,
         y: 33,
     },
     {
-        x: 'Quarta',
+        x: 3,
         y: 32,
     },
     {
-        x: 'Quinta',
+        x: 4,
         y: 13,
     },
     {
-        x: 'Sexta',
+        x: 5,
         y: 15,
     },
     {
-        x: 'Sabado',
+        x: 6,
         y: 17,
     },
     {
-        x: 'Domingo',
+        x: 7,
         y: 28,
     },
 ]

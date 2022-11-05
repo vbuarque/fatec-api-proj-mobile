@@ -32,7 +32,6 @@ export default function StackRoutes() {
         },
       }} 
       />
-      <Screen name="Favorites" component={TabRoutes} />
     </Navigator>
     </>
     

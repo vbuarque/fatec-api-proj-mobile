@@ -30,8 +30,6 @@ export default function CardStation( {name, reference, link, onPress}: StationPr
     setIsFavoriteIcon(!isFavoriteIcon);
   }
 
-  
-
   return ( 
     <>
       <Card onPress={onPress}>
@@ -46,9 +44,9 @@ export default function CardStation( {name, reference, link, onPress}: StationPr
             <StationLocal>{reference}</StationLocal>
           </StationContent>
         </StationInformationContainer>
-        <ButtonFavorite onPress={handleChangeIconFav}>
+        {/* <ButtonFavorite onPress={handleChangeIconFav}>
           <Star size={24} color="#f8f8ff" weight={isFavoriteIcon ? "regular" : "fill"} />
-        </ButtonFavorite>
+        </ButtonFavorite> */}
       </Card>
     </>
   );

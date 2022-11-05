@@ -1,7 +1,7 @@
 import { ScrollView } from 'react-native';
 import { useRoute } from "@react-navigation/native";
 
-import { 
+import {
     StationContentTop,
     Image,
     StationInformationContainer,
@@ -26,15 +26,13 @@ type StationProps = {
 
 export default function Details() {
     const routes = useRoute();
-    const {name, reference, link} = routes.params as StationProps;
-
-
+    const { name, reference, link } = routes.params as StationProps;
 
     return (
         <>
             <ScrollView>
                 <StationContentTop>
-                    <Image source={{uri: link}}/>
+                    <Image source={{ uri: link }} />
                     <StationInformationContainer>
                         <StationContent>
                             <StationNameTitle>Nome da estação</StationNameTitle>
@@ -52,7 +50,10 @@ export default function Details() {
                     <ContentDataTitle>
                         <ContentDataTitleText>Dados coletados da estação</ContentDataTitleText>
                     </ContentDataTitle>
-                    <StationChart />
+                    <StationChart title="Pluviômetro" />
+                    <StationChart title="Velocidade do vento" />
+                    <StationChart title="Temperatura" />
+                    <StationChart title="Umidade do ar" />
                 </StationContentData>
             </ScrollView>
         </>

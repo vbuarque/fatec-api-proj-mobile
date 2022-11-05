@@ -17,7 +17,6 @@ export const Image = styled.Image`
 
 export const StationInformationContainer = styled.View`
     flex: 1;
-    justify-content: space-between;
     align-items: center;
     flex-direction: row;
 `;
@@ -30,9 +29,6 @@ export const StationNameTitle = styled.Text`
     font-weight: 700;
     font-size: 16px;
     color: #29292e;
-
-    width: 100%;
-    text-overflow: ellipsis;
 `;
 
 export const StationName = styled.Text`
@@ -63,15 +59,11 @@ export const Divider = styled.View`
 `;
 
 export const StationContentData = styled.View`
-    width: 100%;
-    align-items: center;
     flex: 1;
-    padding: 0 20px;
+    align-items: center;
 `;
 
-export const ContentDataTitle = styled.View`
-    align-items: center;
-`;
+export const ContentDataTitle = styled.View``;
 
 export const ContentDataTitleText = styled.Text`
     font-weight: 700;
